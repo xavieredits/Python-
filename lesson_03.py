@@ -54,3 +54,10 @@ print("CAN".lower())
 a= "programing in \"python\" is \n simple \n and fun"
 print(a) #\n is used for line break or enter in a print sequence
 # and \"(word)\" is used for applying "" in a print secquence 
+
+
+print("===================practice set=================")
+name = input("enter you name:")
+print("goodmorning",name) # old method
+print(f"goodafternoon {name} have a nice day")
+# a better method like java and js here "f" is used to let pythone know about the formations initation
