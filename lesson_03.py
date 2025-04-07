@@ -60,4 +60,9 @@ print("===================practice set=================")
 name = input("enter you name:")
 print("goodmorning",name) # old method
 print(f"goodafternoon {name} have a nice day")
-# a better method like java and js here "f" is used to let pythone know about the formations initation
+# a better method like java and js here "f" is used to let pythone know about the formations initiation
+
+letter ='''dear <|name|>,
+            you are selected! <|date|>'''
+
+print(letter.replace("<|name|>","cani").replace("<|date|>","24 september"))
