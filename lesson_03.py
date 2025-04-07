@@ -13,3 +13,44 @@ print(anotherName);
 choosenName = "harry"
 # userName =choosenName[-4:-2]
 # print(userName);
+ 
+print(choosenName[-4:-1]) # arr
+print(choosenName[1:4])   # arr
+
+print(choosenName[:4]) # is same as print(choosenName[0:4])
+print(choosenName[1:]) # is same as print(choosenName[1:5])
+print(choosenName[1:5]) 
+# all have same output arry 
+
+# slicing with skiping values 
+# we can provide a skip value as a part of slice 
+# usualy called start stop step values
+
+print("==================new area======")
+
+word = "amazing"
+print(word[1:6:2]) # start at index 1 stop at index 6 and skip/keep step of 2 
+
+characterName = "spiderman"
+print(characterName[2:6:2])
+
+# fnctions of string
+print("==================functions of strings====")
+srt="xani"
+
+print(len(srt)); # 4
+
+print(name.endswith("ni"))# ture 
+
+print(name.startswith("xa")) # startswith & ends with these functions are case sensiteive 
+#if XA or NI was used then outcome will be false
+
+print(name.capitalize()) # only capitalize the first character in the string
+
+print(name.upper())
+
+print("CAN".lower())
+
+a= "programing in \"python\" is \n simple \n and fun"
+print(a) #\n is used for line break or enter in a print sequence
+# and \"(word)\" is used for applying "" in a print secquence 
