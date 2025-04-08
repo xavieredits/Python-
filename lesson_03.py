@@ -66,3 +66,9 @@ letter ='''dear <|name|>,
             you are selected! <|date|>'''
 
 print(letter.replace("<|name|>","cani").replace("<|date|>","24 september"))
+
+object ="xani is a good  coder"
+print(object.replace("  "," "));
+print(object)# see the difference;
+
+print(object.find("  "))# <=  helps to find a something or in this case to find empty space 
