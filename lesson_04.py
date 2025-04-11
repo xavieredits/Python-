@@ -32,3 +32,10 @@ print(list1);
 list1.pop(2);
 print(list1);
 
+# remove ==> to remove a perticular value of list directly without using any index 
+
+list1.remove("value insert");
+list1.sort();
+print(list1);
+
+# Typles in pythons ==> its a datatype in python which stores immutable sequences of elememts 
