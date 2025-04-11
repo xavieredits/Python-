@@ -73,3 +73,41 @@ print(i);
 myTuple=y*3;
 print(myTuple);
 # (1, 34, 352, 235, False, 'cani', 'xani', 'amit', 1, 34, 352, 235, False, 'cani', 'xani', 'amit', 1, 34, 352, 235, False, 'cani', 'xani', 'amit')
+
+print(len(y));
+
+# slicing in tuples
+
+sliced = y[1:4];
+print(sliced); 
+
+# practice set 4 
+print("==================== practice set =============")
+
+#  create a program to store seven fruits in a list enterd by a user;
+
+# # my way 
+
+# values = input("enter 7 fruits: ");
+# fruits = [values];
+# print(fruits);
+
+# pro way 
+
+fruits = []
+f1 = input("enter some fruits name:")
+fruits.append(f1);
+# 0r
+# Create an empty list to store the fruits
+
+fruits = []
+
+# Loop to get 7 fruits from the user
+for i in range(7):
+    fruit = input(f"Enter fruit #{i+1}: ")
+    fruits.append(fruit)
+
+# Display the list of fruits
+print("\nYou entered the following fruits:")
+for fruit in fruits:
+    print(f"- {fruit}")
