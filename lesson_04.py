@@ -29,3 +29,6 @@ list1.insert(4,"value insert"); # here 4 is the value of index and the next valu
 print(list1);
 
 # pop ==> to remove any data at any perticlar index
+list1.pop(2);
+print(list1);
+
