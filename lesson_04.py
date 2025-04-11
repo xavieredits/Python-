@@ -54,12 +54,22 @@ a = (1,) #=> tuple with single value
 
 # create a tuple with multiple objects or elements
 
-y = (1,34,352,235, "cani" , "xani" , "amit");
+y = (1,34,352,235,False,"cani" , "xani" , "amit");
 
 # accessing value of tuple with indexing value 
 # y[0] = 234 tuple is immutable so can not change value after creating 
 
 print(y[1]); #value can be accesed  
 
+# methods of tuples
 
+no = y.count(34);
+print(no);
 
+i = y.index(235);  # finds  index of the value in the tuple  
+print(i);
+
+# repetions in tuples "*"
+myTuple=y*3;
+print(myTuple);
+# (1, 34, 352, 235, False, 'cani', 'xani', 'amit', 1, 34, 352, 235, False, 'cani', 'xani', 'amit', 1, 34, 352, 235, False, 'cani', 'xani', 'amit')
