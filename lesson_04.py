@@ -39,3 +39,27 @@ list1.sort();
 print(list1);
 
 # Typles in pythons ==> its a datatype in python which stores immutable sequences of elememts 
+
+x = (1,2,3,4,5,6,7,8,9)
+print(type(x));# class => tuple
+
+# tuple is created by the use of "()" bracket and "," with out "," python understand as a single value in "()"
+
+# empty tuple
+a=()
+
+# tuple with single value 
+
+a = (1,) #=> tuple with single value 
+
+# create a tuple with multiple objects or elements
+
+y = (1,34,352,235, "cani" , "xani" , "amit");
+
+# accessing value of tuple with indexing value 
+# y[0] = 234 tuple is immutable so can not change value after creating 
+
+print(y[1]); #value can be accesed  
+
+
+
