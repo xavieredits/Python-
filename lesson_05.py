@@ -57,5 +57,10 @@ print("================= sets =============== ")
 
 #  set is a colletion of non-reletive elements;
 # no repetetion is allowed in sets
+# s = {} empty dict
 
+s = {1,3,4,5,6}
 
+e = set() # empty set ==> "()"
+print(type(e),e) 
+# in set if there is any repeteion of any value example s={1,44,5,3,5,5,5}  , in output it is not diplayed cause it's not included in the set // not repetion //
