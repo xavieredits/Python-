@@ -64,3 +64,14 @@ s = {1,3,4,5,6}
 e = set() # empty set ==> "()"
 print(type(e),e) 
 # in set if there is any repeteion of any value example s={1,44,5,3,5,5,5}  , in output it is not diplayed cause it's not included in the set // not repetion //
+
+# sets inclue text and letter vaules too...
+
+G ={1,4,53,4,9,67,"xani"};
+print(G,type(G));
+
+# methods of sets 
+
+# [add] ==> is used to add in any set 
+s.add(90);
+print(s);
