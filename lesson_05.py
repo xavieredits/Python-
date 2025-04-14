@@ -43,3 +43,19 @@ print(marks);
 
 # [get] ==> returns the value fo the sepecific key(and value is returned)
 
+# note the difference 
+print(marks.get('maths'));# returns none;
+print(marks["maths"]); # returns error 
+
+# result is same but get returns none when there is no releted element in the dict where as 
+# in "[maths]" options it reutruns error in the prompt 
+
+# [ dict.clear() ] ==> it is used to clear all the content in the dictonary 
+
+# sets 
+print("================= sets =============== ")
+
+#  set is a colletion of non-reletive elements;
+# no repetetion is allowed in sets
+
+
