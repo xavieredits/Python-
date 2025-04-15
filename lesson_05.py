@@ -123,3 +123,10 @@ print(shopList[item]);
 # y.add(n);
 # print(y)
 
+# create an empty dict and add values latter
+
+dic={}
+name = input("enter name : ")
+marks = int(input("makrs:"))
+dic.update({name:marks});
+print(dic)
