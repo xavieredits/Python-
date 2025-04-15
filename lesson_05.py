@@ -75,3 +75,14 @@ print(G,type(G));
 # [add] ==> is used to add in any set 
 s.add(90);
 print(s);
+
+# note we can not access values uning index in sets
+
+# what works on sets ==>
+# len , remove ,  clear , pop , union , intersection
+
+s.remove(1)
+print(s);
+
+print(s.pop() , s) # remove some randome value 
+
