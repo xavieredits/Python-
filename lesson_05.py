@@ -86,3 +86,25 @@ print(s);
 
 print(s.pop() , s) # remove some randome value 
 
+set1 = {1,4,5,6,78}
+set2 = {2,56,72,88} 
+print(set1.union(set2));
+
+print(set1.intersection(set2));# none of the values intersect
+
+print("============= practice set ============")
+
+# write a program to create a dict and related value extraction
+
+shopList ={
+    "milk":56,
+    "eggs":29,
+    "spices":23,
+    "bread":44
+};
+
+item =input("enter the intem :")
+print(shopList[item]);
+
+#  create a program to enter some number and print unique number from them 
+
