@@ -108,3 +108,18 @@ print(shopList[item]);
 
 #  create a program to enter some number and print unique number from them 
 
+# y =set()
+# n = input("enter number1 :")
+# y.add(n);
+# n = input("enter number1 :")
+# y.add(n);
+# n = input("enter number1 :")
+# y.add(n);
+# n = input("enter number1 :")
+# y.add(n);
+# n = input("enter number1 :")
+# y.add(n);
+# n = input("enter number1 :")
+# y.add(n);
+# print(y)
+
