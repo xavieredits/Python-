@@ -18,3 +18,7 @@ elif(age<=0):
 else:
     print("meh!");
 
+# this is called if elif else ladder ;
+
+#  relation oprators "== ,> , < , >= or <="
+
