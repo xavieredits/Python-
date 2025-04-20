@@ -22,3 +22,17 @@ else:
 
 #  relation oprators "== ,> , < , >= or <="
 
+#{ multipule if statements in if and else command...}
+
+m = int(input("enter you marks:"))
+# if statement number 1
+if(m%2==0):
+    print("even")
+# -- end of if statement number 1 
+# if statement number 2
+if(m>=18):
+    print("selected")
+# end of if statement number 2
+
+
+
