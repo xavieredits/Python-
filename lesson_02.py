@@ -1,3 +1,4 @@
+#  finding type of variables
 a = 123
 t = type(a);
 print(t) #<class.int>
