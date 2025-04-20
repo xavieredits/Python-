@@ -34,5 +34,5 @@ if(m>=18):
     print("selected")
 # end of if statement number 2
 
-
+# here every "if" statement is independent .... bit else and elif is depends on if .. cant stand alone
 
