@@ -27,3 +27,30 @@ while(e<len(list1)):  #here the length of list is used for the range in while lo
     e = e+1
 
 # [ for loops ]
+
+for i in range(1,4,2):
+    print(i,"hello")
+#  use of start , stop and step can be applied
+
+anotherList = [1,4,66 , "shubh" ,"can" , "english"]
+
+for j in anotherList:
+    print(j);
+
+# for loops with tuples 
+
+t = ( 1 , 22 ,650 , 54 , 75)
+
+for i in t:
+    print(i);
+
+#  ittration of string in loops
+
+a = "luffy"
+for i in a:
+    print(i)
+a = "luffy"
+for i in a:
+    print(a)
+# check for the  diff
+
