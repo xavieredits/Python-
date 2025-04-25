@@ -54,3 +54,11 @@ for i in a:
     print(a)
 # check for the  diff
 
+# [for loops in else]:
+ 
+listItem = [11,22,33]
+
+for i in listItem:
+    print(i)
+else:
+    print("done")
