@@ -62,3 +62,29 @@ for i in listItem:
     print(i)
 else:
     print("done")
+
+# [ BREAK , CONTIBUE OR PASS IN LOOPS ]
+
+# break
+for i in range(100) :
+    if(i == 34):
+        break # exit the loop
+    print(i)
+
+# continue 
+
+for i in  range(50):
+    if(i == 35):
+        continue # Skip this iteration right now 
+    print(i)
+# it skiped 35 and continued 
+
+# pass
+
+for i in range(30):
+    pass
+    # it prevents errors cause the satement is incomplete
+i= 0 
+while(i<5):
+    print(i)
+    i=i+1
