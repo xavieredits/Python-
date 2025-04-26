@@ -92,7 +92,7 @@ while(i<5):
 print("========= practice set ==========")
 
 # Q [ write a program to print multiplication table of a given number using for loop. ]
-
+print("lets create a table using a for loop")
 n = int(input("enter a number: "))
 
 for i in range(1,11):
@@ -107,7 +107,7 @@ for name in l:
 
 
 # Q [ write a program to print multiplication table of a given number using while loop. ]
-
+print("lets create a table using while loop")
 n = int(input("enter a num: "))
 
 i = 1
@@ -116,6 +116,7 @@ while(i<11):
     i = i+1;
 
 # find if the number is prime of not 
+print("lets find prime number")
 n = int(input("enter a number: "))
 
 for i in range(2,n):
@@ -124,3 +125,14 @@ for i in range(2,n):
         break
 else:
     print("number is prime")
+
+# Q [write a program to find the sum of first natural numbers using while loop ]
+print("lets find sum of natural numbers")
+
+n = int(input("enter a number: "))
+i = 1
+sum = 0 
+while (i<=n):
+    sum +=i
+    i+=1
+print(sum)
