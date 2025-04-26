@@ -136,3 +136,16 @@ while (i<=n):
     sum +=i
     i+=1
 print(sum)
+
+# Q [ write a program to calculate the factorial of a given number using for loop ]
+
+print("lets find factorial of a number using for loop")
+
+# Q what is factorial ? 
+# 5! = 1 x 2 x 3 x 4 x 5
+
+n = int(input("number"))
+product = 1
+for i in range(1 , n+1):
+    product =product * i
+print(f"the factorial of {n} is {product}")
