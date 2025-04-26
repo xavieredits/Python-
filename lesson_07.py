@@ -99,5 +99,8 @@ for i in range(1,11):
     print(f"{n} x {i} = {n*i}");
 
 # Q [write a program to great all the person name stored in a list 'l' and which start with s. ]
-
 l= ["harry" , "shoan" , "sachin" ,"rahul"]
+
+for name in l:
+    if(name.startswith("s")):
+        print(f"hello {name}");
