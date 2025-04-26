@@ -104,3 +104,13 @@ l= ["harry" , "shoan" , "sachin" ,"rahul"]
 for name in l:
     if(name.startswith("s")):
         print(f"hello {name}");
+
+
+# Q [ write a program to print multiplication table of a given number using while loop. ]
+
+n = int(input("enter a num: "))
+
+i = 1
+while(i<11):
+    print(n*i)
+    i = i+1;
