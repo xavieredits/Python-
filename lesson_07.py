@@ -149,3 +149,17 @@ product = 1
 for i in range(1 , n+1):
     product =product * i
 print(f"the factorial of {n} is {product}")
+
+# Q [write a program to print the follwing pattern ]
+"""
+  *
+ ***
+*****
+"""
+# for n = 3
+print("=== lets create a pattern for *===")
+n = int(input("enter the number: "))
+for i in range (1,n+1):
+    print(" "*(n-i), end="")
+    print("*"*2*i-1, end="")  #adding a end statement helps to prevent any new line by the print command
+    print("\n")
