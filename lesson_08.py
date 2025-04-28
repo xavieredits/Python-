@@ -48,6 +48,7 @@ libWrok("comics") # <== here the status is not provided but the default value wi
 # like factoirals 
 
 '''
+factorial(0) = 1
 factorial(1) = 1
 factorail(2) = 1 x 2
 factorial(3) = 1 x 2 x 3
@@ -58,3 +59,12 @@ factorial(n) = n x n-1 x....... 3 x 2 x 1
 
 factorial(n) = n * factorial(n-1)
 '''
+# lets build a factorial logic
+
+def factorail(n):
+    if( n==1 or n==0):
+        return 1
+    return n * factorail(n-1)
+
+n = int(input("enter a number to find factoral: "))
+print(f"the factorial of the number is : {factorail(n)}")
