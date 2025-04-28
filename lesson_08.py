@@ -41,3 +41,6 @@ def libWrok(name , status="available"):
 
 libWrok("fram" ,"available")
 libWrok("comics") # <== here the status is not provided but the default value will be used by the logic
+
+# [ RECURSION ]
+# THIS funtion calls itself cause the logic is linked to itself 
