@@ -44,3 +44,17 @@ libWrok("comics") # <== here the status is not provided but the default value wi
 
 # [ RECURSION ]
 # THIS funtion calls itself cause the logic is linked to itself 
+
+# like factoirals 
+
+'''
+factorial(1) = 1
+factorail(2) = 1 x 2
+factorial(3) = 1 x 2 x 3
+factorial(4) = 1 x 2 x 3 x 4
+factorial(5) = 1 x 2 x 3 x 4 x 5
+
+factorial(n) = n x n-1 x....... 3 x 2 x 1
+
+factorial(n) = n * factorial(n-1)
+'''
