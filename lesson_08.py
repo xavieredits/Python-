@@ -68,3 +68,34 @@ def factorail(n):
 
 n = int(input("enter a number to find factoral: "))
 print(f"the factorial of the number is : {factorail(n)}")
+
+print("============= practice set ===========")
+
+# write a program using function find greatest of thee number 
+
+
+def greatestNumber(a,b,c):
+    if(a>b and a>c):
+        return a
+    elif(b>a and b>c):
+        return b
+    elif(c>a and c>b):
+        return c 
+
+a = 1
+b = 22
+c = 3
+
+print(greatestNumber(a,b,c))
+
+# wite a program using funtion to convert celcius to fahrenhite.
+#  [ formula of celcius c/5 = (f-32)/9 ]
+# after conversion
+#  c = 5*(f-32)/9
+
+def f_to_c(f):
+    return 5*(f-32)/9 
+
+f= int(input("enter the temp: "))
+c =f_to_c(f)
+print(f"{round(c,2)} deg c");  
