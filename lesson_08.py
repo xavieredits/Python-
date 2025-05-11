@@ -99,3 +99,17 @@ def f_to_c(f):
 f= int(input("enter the temp: "))
 c =f_to_c(f)
 print(f"{round(c,2)} deg c");  
+
+# wite a function to print first n line fo the pattern (n = 3)
+
+# ***
+# **
+# *
+
+def pattern(n):
+    if(n==0):
+        return
+    print("*" * n)
+    pattern(n-1)
+
+pattern(5)
