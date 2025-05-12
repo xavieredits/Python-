@@ -1,0 +1,4 @@
+[ Project 1 ]
+
+SNAKE WATER GUN GAME 
+WE ALL have played snake , water gun game , you can google the rules if you haven't and wite a python program capable of playing this game with the user
