@@ -7,10 +7,11 @@
 computer = -1
 youstr= input("enter your choice: ")
 youDict = {"s":1 , "w":-1 , "g":0}
+reverseDict = {1:"sanke" , -1:"water" , 0:"gun"}
 
 you= youDict[youstr]
 
-print("")
+print(f"you chose {reverseDict[you]}\ncomputer chose {reverseDict[computer]}")
 
 if(computer == you):
     print("its a draw")
