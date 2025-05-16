@@ -44,3 +44,11 @@ else:
 
     else:
         print("someting went wrong")
+
+# shorthand code :
+
+# if((computer - you) == -1 (computer - you)==2):
+#     print("you lose")
+# else:
+#     print("you win")
+ 
