@@ -13,4 +13,6 @@ data = f.read()
 print(data)
 f.close()
 
+# the file which is opend has to closed to access again.
 
+# writing in a file 
