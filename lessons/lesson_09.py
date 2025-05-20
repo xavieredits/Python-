@@ -16,3 +16,23 @@ f.close()
 # the file which is opend has to closed to access again.
 
 # writing in a file 
+Text = "here is a data to insert "
+f = open("/workspaces/Python-/lessons/file.txt","w")
+# here "w" refers to the Write mode 
+f.write(Text)
+f.close()
+
+# read lines function 
+f = open("/workspaces/Python-/lessons/file.txt")
+lines = f.readlines()
+print(lines,type(lines))
+
+f.close()
+
+# while loop for the readlines 
+f = open("/workspaces/Python-/lessons/file.txt")
+line = f.readline
+while(line != ""):
+    print(line)
+    line = f.readline()
+f.close()
