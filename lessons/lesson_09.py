@@ -35,4 +35,11 @@ line = f.readline
 while(line != ""):
     print(line)
     line = f.readline()
-f.close()
+f.close() 
+
+# some times to prevent the close statement we use with statement like this:
+
+with open("/workspaces/Python-/lessons/file.txt")as f:
+    print(f.read())
+
+# you don't have to explicitly close the file 
