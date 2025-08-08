@@ -1,0 +1,9 @@
+Book_ID,Title,Author,Genre,Price,Quantity,Publisher,Publication_Year,ISBN,Language,Rating,Sales,Total_Revenue
+101,The Alchemist,Paulo Coelho,Fiction,299,12,HarperCollins,1993,11224,English,4.7,280,83720
+102,Atomic Habits,James Clear,Self-Help,450,7,Penguin,2018,52112,English,4.8,300,135000
+103,Wings of Fire,A.P.J. Abdul Kalam,Biography,350,5,Universities Press,1999,71146,English,4.6,170,59500
+104,Ikigai,Hector Garcia,Self-Help,320,10,Penguin Random House,2016,13072,English,4.5,240,76800
+105,The God of Small Things,Arundhati Roy,Fiction,280,4,IndiaInk,1997,57312,English,4.2,140,39200
+106,Think Like a Monk,Jay Shetty,Self-Help,399,8,Simon & Schuster,2020,34488,English,4.4,270,107730
+107,Rich Dad Poor Dad,Robert Kiyosaki,Finance,430,6,Warner Books,1997,77455,English,4.6,300,129000
+108,The Guide,R.K. Narayan,Fiction,260,3,Indian Thought Pub.,1958,86174,English,4.1,90,23400
