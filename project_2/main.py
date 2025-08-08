@@ -5,7 +5,7 @@ def showData():
     df=pd.read_csv('project_2/books.csv')
     while True:
         print("=================================")
-        print("|           Option 1            |")
+        print("|         Data review           |")
         print("---------------------------------")
         print("|      1. Show all Data         |")
         print("|      2.  Find a book          |")
@@ -42,5 +42,20 @@ def showData():
         else:
             print("opps!.. looks like a error occoured with keyboard...")
             break
+
+def analysis():
+        print("=================================")
+        print("|          Data Analysis        |")
+        print("---------------------------------")
+        print("|      1. TOP Selling books     |")
+        print("|      2.LEAST Selling books    |")
+        print("|      3. Most Rated books      |")
+        print("|      4. Heighest priced       |")
+        print("|      5. lowest priced         |")
+        print("|      6.Back to main menue     |")
+        print("=================================")
+
+
+
 
 showData()
