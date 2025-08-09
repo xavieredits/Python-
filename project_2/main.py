@@ -88,5 +88,5 @@ def analysis():
             break
 
 # Example of how to run
-# showData()
+showData()
 analysis()
