@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 # Load the CSV once here
 df = pd.read_csv("project_2/books.csv")
 
+# dataview or review seciton 
 def showData():
     while True:
         print("=================================")
@@ -38,7 +39,7 @@ def showData():
         else:
             print("Oops!.. looks like an error occurred with keyboard...")
             break
-
+# Analysis section [data analysis and quries]
 def analysis():
     while True:
         print("=================================")
@@ -87,6 +88,72 @@ def analysis():
             print("Invalid option, please try again.")
             break
 
+# data manipulation 
+def Altration():
+    while True:
+        print("=================================")
+        print("|         Data Altration        |")
+        print("---------------------------------")
+        print("|      1. Add a row             |")
+        print("|      2. Insert a column       |")
+        print("|      3. Delete a row          |")
+        print("|      4. Delete a column       |")
+        print("|      5. Update a cell value   |")
+        print("|      6. Back to main menu     |")
+        print("=================================")
+
+        UserB = int(input("Select an Option: "))
+
+        if UserB == 1:
+            print("Current Columns:", list(df.columns))
+            new_data = [] # empty list to store data entered 
+            for col in df.columns:
+                value = input(f"Enter value for {col}: ")
+                new_data.append(value)
+            new_row = pd.DataFrame([new_data], columns=df.columns)
+            df.loc[len(df)] = new_data
+            df.to_csv("project_2/books.csv", index=False)
+            print("Row added successfully!")
+
+        elif UserB == 2:
+            col_name = input("Enter new column name: ")
+            default_value = input("Enter default value for all rows: ")
+            df[col_name] = default_value
+            df.to_csv("project_2/books.csv", index=False)
+            print("Column added successfully!")
+
+        elif UserB == 3:
+            print(df)
+            row_index = int(input("Enter row index to delete: "))
+            df.drop(index=row_index, inplace=True)
+            df.to_csv("project_2/books.csv", index=False)
+            print("Row deleted successfully!")
+
+        elif UserB == 4:
+            print("Columns:", list(df.columns))
+            col_name = input("Enter column name to delete: ")
+            df.drop(columns=col_name, inplace=True)
+            df.to_csv("project_2/books.csv", index=False)
+            print("Column deleted successfully!")
+
+        elif UserB == 5:
+            print(df)
+            row_index = int(input("Enter row index to update: "))
+            col_name = input("Enter column name to update: ")
+            new_value = input("Enter new value: ")
+            df.at[row_index, col_name] = new_value
+            df.to_csv("project_2/books.csv", index=False)
+            print("Value updated successfully!")
+
+        elif UserB == 6:
+            print("Returning to main menu...")
+            break
+
+        else:
+            print("Invalid option, try again.")
+
+
 # Example of how to run
 showData()
 analysis()
+Altration()
