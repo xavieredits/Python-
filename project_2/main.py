@@ -172,23 +172,22 @@ def MainMenue():
         print("=================================")
 
         UserC = int(input("Select an Option: "))
-        if UserC ==1:
+        if UserC == 1:
             print("Loading....")
             showData()
-        elif UserC ==2:
+        elif UserC == 2:
             print("Loading....")
             analysis()
-        elif UserC ==3:
+        elif UserC == 3:
             print("Loading....")
             Altration()
         elif UserC == 4:
-            #  graphs()
-            break
+            # graphs()
+            print("Graphs not implemented yet.")
         elif UserC == 5:
-            print("Exiting")
-            break;
+            print("Exiting...")
+            return   # <-- ensures program fully stops
         else:
             print("Invalid option, try again.")
-            break;
 
 MainMenue()
