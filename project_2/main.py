@@ -39,10 +39,10 @@ def showData():
         
         elif user == 3:
             print("Getting you back...")
-            break
+            MainMenue()
         else:
             print("Oops!.. looks like an error occurred with keyboard...")
-            break
+            MainMenue()
 # Analysis section [data analysis and quries]
 def analysis():
     while True:
@@ -86,11 +86,11 @@ def analysis():
         
         elif userA == 6:
             print("Returning to main menu...")
-            break
+            MainMenue()
         
         else:
             print("Invalid option, please try again.")
-            break
+            MainMenue()
 
 # data manipulation 
 def Altration():
@@ -151,7 +151,7 @@ def Altration():
 
         elif UserB == 6:
             print("Returning to main menu...")
-            break
+            MainMenue()
 
         else:
             print("Invalid option, try again.")
@@ -171,4 +171,24 @@ def MainMenue():
         print("|      5. exit                  |")
         print("=================================")
 
-        UserB = int(input("Select an Option: "))
+        UserC = int(input("Select an Option: "))
+        if UserC ==1:
+            print("Loading....")
+            showData()
+        elif UserC ==2:
+            print("Loading....")
+            analysis()
+        elif UserC ==3:
+            print("Loading....")
+            Altration()
+        elif UserC == 4:
+            #  graphs()
+            break
+        elif UserC == 5:
+            print("Exiting")
+            break;
+        else:
+            print("Invalid option, try again.")
+            break;
+
+MainMenue()
