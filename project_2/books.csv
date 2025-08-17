@@ -1,4 +1,4 @@
-Book_ID,Title,Author,Genre,Price,Quantity,Publisher,Publication_Year,ISBN,Language,Rating,Sales,Total_Revenue
+Book_ID,Title,Author,Genre,Price,Quantity,Publisher,Publication_Year,ISBN,Language,Rating,Sales,Revenue
 101,The Alchemist,Paulo Coelho,Fiction,299,12,HarperCollins,1993,11224,English,4.7,280,83720
 102,Atomic Habits,James Clear,Self-Help,450,7,Penguin,2018,52112,English,4.8,300,135000
 103,Wings of Fire,A.P.J. Abdul Kalam,Biography,350,5,Universities Press,1999,71146,English,4.6,170,59500

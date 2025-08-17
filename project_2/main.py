@@ -20,8 +20,12 @@ def showData():
         if user == 1:
             print("Displaying...")
             print("=================================")
+            # Calculate Revenue (Price * Sales) and add/update column
+            df["Revenue"] = df["Price"] * df["Sales"]
             print(df)
             print("=================================")
+            # Save back to CSV with Revenue column
+            df.to_csv("project_2/books.csv", index=False)
         
         elif user == 2:
             search_term = input("Enter a book name / book id / author name: ").lower()
@@ -108,16 +112,16 @@ def Altration():
             print("Current Columns:", list(df.columns))
             new_data = [] # empty list to store data entered 
             for col in df.columns:
-                value = input(f"Enter value for {col}: ")
-                new_data.append(value)
-            new_row = pd.DataFrame([new_data], columns=df.columns)
+                value = input(f"Enter value for {col}: ") # entering value accessing col for ref
+                new_data.append(value) #adding value to empty list 
+            new_row = pd.DataFrame([new_data], columns=df.columns)# adding value of data to dataframe
             df.loc[len(df)] = new_data
             df.to_csv("project_2/books.csv", index=False)
             print("Row added successfully!")
 
         elif UserB == 2:
-            col_name = input("Enter new column name: ")
-            default_value = input("Enter default value for all rows: ")
+            col_name = input("Enter new column name: ") # for column name 
+            default_value = input("Enter default value for all rows: ") # entering values 
             df[col_name] = default_value
             df.to_csv("project_2/books.csv", index=False)
             print("Column added successfully!")
@@ -154,6 +158,17 @@ def Altration():
 
 
 # Example of how to run
-showData()
-analysis()
-Altration()
+
+def MainMenue():
+    while True:
+        print("=================================")
+        print("|           Main Menue          |")
+        print("---------------------------------")
+        print("|      1. showData              |")
+        print("|      2. Analysis              |")
+        print("|      3. Altration             |")
+        print("|      4. Graphs                |")
+        print("|      5. exit                  |")
+        print("=================================")
+
+        UserB = int(input("Select an Option: "))
