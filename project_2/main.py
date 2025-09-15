@@ -158,6 +158,8 @@ def Altration():
 
 # Graphs section
 def graphs():
+    print("Available columns in CSV:", df.columns.tolist())  # Debugging step
+
     while True:
         print("=================================")
         print("|            Graphs             |")
@@ -165,47 +167,44 @@ def graphs():
         print("|      1. Book vs Sales         |")
         print("|      2. Book vs Rating        |")
         print("|      3. Genre vs Sales (Pie)  |")
-        print("|      4. Back to main menu     |")
+        print("|      4. Back to Main Menu     |")
         print("=================================")
 
-        userG = int(input("Select an option: "))
+        choice = int(input("Select an option: "))
 
-        if userG == 1:
-            # Line chart for Book Name vs Sales
-            plt.figure(figsize=(10,5))
-            plt.plot(df["Book_Name"], df["Sales"], marker="o", linestyle="-", color="b")
+        if choice == 1:
+            plt.figure(figsize=(10, 5))
+            plt.plot(df["Title"], df["Sales"], marker="o", linestyle="-", color="b")
             plt.title("Book Popularity (Sales)")
-            plt.xlabel("Book Name")
+            plt.xlabel("Book Title")
             plt.ylabel("Sales")
-            plt.xticks(rotation=45, ha="right")
+            plt.xticks(rotation=45)
             plt.tight_layout()
             plt.show()
 
-        elif userG == 2:
-            # Line chart for Book Name vs Rating
-            plt.figure(figsize=(10,5))
-            plt.plot(df["Book_Name"], df["Rating"], marker="o", linestyle="-", color="g")
+        elif choice == 2:
+            plt.figure(figsize=(10, 5))
+            plt.plot(df["Title"], df["Rating"], marker="o", linestyle="-", color="g")
             plt.title("Book Ratings")
-            plt.xlabel("Book Name")
+            plt.xlabel("Book Title")
             plt.ylabel("Rating")
-            plt.xticks(rotation=45, ha="right")
+            plt.xticks(rotation=45)
             plt.tight_layout()
             plt.show()
 
-        elif userG == 3:
-            # Pie chart for Genre vs Sales
+        elif choice == 3:
+            plt.figure(figsize=(8, 6))
             genre_sales = df.groupby("Genre")["Sales"].sum()
-            plt.figure(figsize=(7,7))
-            plt.pie(genre_sales, labels=genre_sales.index, autopct="%1.1f%%", startangle=140)
-            plt.title("Sales by Genre")
+            plt.pie(genre_sales, labels=genre_sales.index, autopct="%1.1f%%")
+            plt.title("Genre vs Sales Distribution")
             plt.show()
 
-        elif userG == 4:
+        elif choice == 4:
             print("Returning to main menu...")
             return
-
         else:
             print("Invalid option, try again.")
+
 
 # Example of how to run
 
