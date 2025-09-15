@@ -156,6 +156,56 @@ def Altration():
         else:
             print("Invalid option, try again.")
 
+# Graphs section
+def graphs():
+    while True:
+        print("=================================")
+        print("|            Graphs             |")
+        print("---------------------------------")
+        print("|      1. Book vs Sales         |")
+        print("|      2. Book vs Rating        |")
+        print("|      3. Genre vs Sales (Pie)  |")
+        print("|      4. Back to main menu     |")
+        print("=================================")
+
+        userG = int(input("Select an option: "))
+
+        if userG == 1:
+            # Line chart for Book Name vs Sales
+            plt.figure(figsize=(10,5))
+            plt.plot(df["Book_Name"], df["Sales"], marker="o", linestyle="-", color="b")
+            plt.title("Book Popularity (Sales)")
+            plt.xlabel("Book Name")
+            plt.ylabel("Sales")
+            plt.xticks(rotation=45, ha="right")
+            plt.tight_layout()
+            plt.show()
+
+        elif userG == 2:
+            # Line chart for Book Name vs Rating
+            plt.figure(figsize=(10,5))
+            plt.plot(df["Book_Name"], df["Rating"], marker="o", linestyle="-", color="g")
+            plt.title("Book Ratings")
+            plt.xlabel("Book Name")
+            plt.ylabel("Rating")
+            plt.xticks(rotation=45, ha="right")
+            plt.tight_layout()
+            plt.show()
+
+        elif userG == 3:
+            # Pie chart for Genre vs Sales
+            genre_sales = df.groupby("Genre")["Sales"].sum()
+            plt.figure(figsize=(7,7))
+            plt.pie(genre_sales, labels=genre_sales.index, autopct="%1.1f%%", startangle=140)
+            plt.title("Sales by Genre")
+            plt.show()
+
+        elif userG == 4:
+            print("Returning to main menu...")
+            return
+
+        else:
+            print("Invalid option, try again.")
 
 # Example of how to run
 
@@ -182,7 +232,7 @@ def MainMenue():
             print("Loading....")
             Altration()
         elif UserC == 4:
-            # graphs()
+            graphs()
             print("Graphs not implemented yet.")
         elif UserC == 5:
             print("Exiting...")
