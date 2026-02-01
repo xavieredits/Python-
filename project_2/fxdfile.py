@@ -1,11 +1,15 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Load both CSV files
-book_df = pd.read_csv(r'C:\Users\aryan\Documents\book_details.csv')
-sales_df = pd.read_csv(r'C:\Users\aryan\Documents\sales_details.csv')
+# ================= FILE PATHS (WINDOWS SAFE) =================
+BOOK_PATH = r"C:\Users\aryan\Documents\book_details.csv"
+SALES_PATH = r"C:\Users\aryan\Documents\sales_details.csv"
 
-# ================= DATA VIEW SECTION =================
+book_df = pd.read_csv(BOOK_PATH)
+sales_df = pd.read_csv(SALES_PATH)
+
+
+# ================= DATA VIEW =================
 def showData():
     while True:
         print("=================================")
@@ -13,42 +17,22 @@ def showData():
         print("---------------------------------")
         print("| 1. Show Book Details           |")
         print("| 2. Show Sales Details          |")
-        print("| 3. Search a Book               |")
-        print("| 4. Back to Main Menu           |")
+        print("| 3. Back to Main Menu           |")
         print("=================================")
 
-        user = int(input("Select an option: "))
+        ch = int(input("Select option: "))
 
-        if user == 1:
-            print("\n--- Book Details ---")
+        if ch == 1:
             print(book_df)
-
-        elif user == 2:
-            print("\n--- Sales Details ---")
+        elif ch == 2:
             print(sales_df)
-
-        elif user == 3:
-            term = input("Enter book name / author: ").lower()
-
-            merged = pd.merge(book_df, sales_df, on=["Title", "Author"])
-            result = merged[
-                merged["Title"].str.lower().str.contains(term) |
-                merged["Author"].str.lower().str.contains(term)
-            ]
-
-            if not result.empty:
-                print("\nBook Found:")
-                print(result)
-            else:
-                print("No match found.")
-
-        elif user == 4:
+        elif ch == 3:
             return
         else:
             print("Invalid option.")
 
 
-# ================= ANALYSIS SECTION =================
+# ================= ANALYSIS =================
 def analysis():
     while True:
         print("=================================")
@@ -56,25 +40,26 @@ def analysis():
         print("---------------------------------")
         print("| 1. Top Selling Books           |")
         print("| 2. Least Selling Books         |")
-        print("| 3. Highest Priced Books        |")
-        print("| 4. Back to Main Menu           |")
+        print("| 3. Most Rated Books            |")
+        print("| 4. Least Rated Books           |")
+        print("| 5. Back to Main Menu           |")
         print("=================================")
 
-        userA = int(input("Select an option: "))
+        ch = int(input("Select option: "))
 
-        if userA == 1:
-            top = sales_df.sort_values(by="Sales", ascending=False).head(5)
-            print(top)
+        if ch == 1:
+            print(sales_df.sort_values(by="Sales", ascending=False)[["Title", "Author", "Sales"]])
 
-        elif userA == 2:
-            least = sales_df.sort_values(by="Sales").head(5)
-            print(least)
+        elif ch == 2:
+            print(sales_df.sort_values(by="Sales")[["Title", "Author", "Sales"]])
 
-        elif userA == 3:
-            high_price = book_df.sort_values(by="Price", ascending=False).head(5)
-            print(high_price)
+        elif ch == 3:
+            print(book_df.sort_values(by="Rating", ascending=False)[["Title", "Author", "Rating"]])
 
-        elif userA == 4:
+        elif ch == 4:
+            print(book_df.sort_values(by="Rating")[["Title", "Author", "Rating"]])
+
+        elif ch == 5:
             return
         else:
             print("Invalid option.")
@@ -86,43 +71,108 @@ def Altration():
         print("=================================")
         print("|        Data Alteration         |")
         print("---------------------------------")
-        print("| 1. Add New Book                |")
-        print("| 2. Add Sales Entry             |")
-        print("| 3. Update Book Price           |")
-        print("| 4. Back to Main Menu           |")
+        print("| 1. Add Book Row                |")
+        print("| 2. Add Sales Row               |")
+        print("| 3. Delete Book Row             |")
+        print("| 4. Delete Sales Row            |")
+        print("| 5. Add Book Column             |")
+        print("| 6. Add Sales Column            |")
+        print("| 7. Delete Book Column          |")
+        print("| 8. Delete Sales Column         |")
+        print("| 9. Update Book Value           |")
+        print("|10. Update Sales Value          |")
+        print("|11. Back to Main Menu           |")
         print("=================================")
 
-        userB = int(input("Select option: "))
+        ch = int(input("Select option: "))
 
-        if userB == 1:
-            new_book = []
+        # ADD BOOK ROW
+        if ch == 1:
+            row = []
             for col in book_df.columns:
-                value = input(f"Enter {col}: ")
-                new_book.append(value)
+                row.append(input(f"Enter {col}: "))
+            book_df.loc[len(book_df)] = row
+            book_df.to_csv(BOOK_PATH, index=False)
+            print("Book row added!")
 
-            book_df.loc[len(book_df)] = new_book
-            book_df.to_csv("project_2/book_details.csv", index=False)
-            print("Book added successfully!")
-
-        elif userB == 2:
-            new_sale = []
+        # ADD SALES ROW
+        elif ch == 2:
+            row = []
             for col in sales_df.columns:
-                value = input(f"Enter {col}: ")
-                new_sale.append(value)
+                row.append(input(f"Enter {col}: "))
+            sales_df.loc[len(sales_df)] = row
+            sales_df.to_csv(SALES_PATH, index=False)
+            print("Sales row added!")
 
-            sales_df.loc[len(sales_df)] = new_sale
-            sales_df.to_csv("project_2/sales_details.csv", index=False)
-            print("Sales entry added!")
-
-        elif userB == 3:
+        # DELETE BOOK ROW
+        elif ch == 3:
             print(book_df)
-            row = int(input("Enter row index: "))
-            new_price = input("Enter new price: ")
-            book_df.at[row, "Price"] = new_price
-            book_df.to_csv("project_2/book_details.csv", index=False)
-            print("Price updated!")
+            idx = int(input("Enter row index: "))
+            book_df.drop(idx, inplace=True)
+            book_df.to_csv(BOOK_PATH, index=False)
+            print("Book row deleted!")
 
-        elif userB == 4:
+        # DELETE SALES ROW
+        elif ch == 4:
+            print(sales_df)
+            idx = int(input("Enter row index: "))
+            sales_df.drop(idx, inplace=True)
+            sales_df.to_csv(SALES_PATH, index=False)
+            print("Sales row deleted!")
+
+        # ADD BOOK COLUMN
+        elif ch == 5:
+            col = input("Enter new column name: ")
+            val = input("Enter default value: ")
+            book_df[col] = val
+            book_df.to_csv(BOOK_PATH, index=False)
+            print("Book column added!")
+
+        # ADD SALES COLUMN
+        elif ch == 6:
+            col = input("Enter new column name: ")
+            val = input("Enter default value: ")
+            sales_df[col] = val
+            sales_df.to_csv(SALES_PATH, index=False)
+            print("Sales column added!")
+
+        # DELETE BOOK COLUMN
+        elif ch == 7:
+            print(list(book_df.columns))
+            col = input("Enter column name: ")
+            book_df.drop(columns=col, inplace=True)
+            book_df.to_csv(BOOK_PATH, index=False)
+            print("Book column deleted!")
+
+        # DELETE SALES COLUMN
+        elif ch == 8:
+            print(list(sales_df.columns))
+            col = input("Enter column name: ")
+            sales_df.drop(columns=col, inplace=True)
+            sales_df.to_csv(SALES_PATH, index=False)
+            print("Sales column deleted!")
+
+        # UPDATE BOOK VALUE
+        elif ch == 9:
+            print(book_df)
+            r = int(input("Row index: "))
+            c = input("Column name: ")
+            v = input("New value: ")
+            book_df.at[r, c] = v
+            book_df.to_csv(BOOK_PATH, index=False)
+            print("Book value updated!")
+
+        # UPDATE SALES VALUE
+        elif ch == 10:
+            print(sales_df)
+            r = int(input("Row index: "))
+            c = input("Column name: ")
+            v = input("New value: ")
+            sales_df.at[r, c] = v
+            sales_df.to_csv(SALES_PATH, index=False)
+            print("Sales value updated!")
+
+        elif ch == 11:
             return
         else:
             print("Invalid option.")
@@ -141,21 +191,21 @@ def graphs():
         print("| 3. Back to Main Menu           |")
         print("=================================")
 
-        choice = int(input("Select option: "))
+        ch = int(input("Select option: "))
 
-        if choice == 1:
+        if ch == 1:
             plt.plot(merged["Title"], merged["Sales"])
             plt.xticks(rotation=45)
             plt.title("Book vs Sales")
             plt.show()
 
-        elif choice == 2:
+        elif ch == 2:
             plt.plot(merged["Title"], merged["Rating"])
             plt.xticks(rotation=45)
             plt.title("Book vs Rating")
             plt.show()
 
-        elif choice == 3:
+        elif ch == 3:
             return
         else:
             print("Invalid option.")
@@ -174,18 +224,18 @@ def MainMenue():
         print("| 5. Exit                        |")
         print("=================================")
 
-        choice = int(input("Select option: "))
+        ch = int(input("Select option: "))
 
-        if choice == 1:
+        if ch == 1:
             showData()
-        elif choice == 2:
+        elif ch == 2:
             analysis()
-        elif choice == 3:
+        elif ch == 3:
             Altration()
-        elif choice == 4:
+        elif ch == 4:
             graphs()
-        elif choice == 5:
-            print("Exiting program...")
+        elif ch == 5:
+            print("Exiting...")
             break
         else:
             print("Invalid option.")
